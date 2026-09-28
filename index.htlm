@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume Builder (NVIDIA NIM)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>AI Resume Builder (NVIDIA NIM)</h2>
+
+    <div class="field">
+      <label for="modelSelect">Seleziona Modello NIM:</label>
+      <select id="modelSelect">
+        <option>Caricamento modelli...</option>
+      </select>
+      <small>Per analizzare immagini, seleziona un modello Vision (es. Llama 3.2 Vision).</small>
+    </div>
+
+    <div class="field">
+      <label for="imageInput">Foto Vecchio CV (Opzionale - copia stile/dati):</label>
+      <input type="file" id="imageInput" accept="image/*">
+    </div>
+
+    <div class="field">
+      <label for="promptInput">Informazioni / Istruzioni:</label>
+      <textarea id="promptInput" rows="6" placeholder="Esperienze recenti, competenze, contatti..."></textarea>
+    </div>
+
+    <button id="generateBtn">Genera Curriculum</button>
+
+    <div id="outputContainer" style="display: none;">
+      <button id="pdfBtn">Esporta in PDF</button>
+      <div id="cvPreview"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
